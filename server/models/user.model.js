@@ -24,6 +24,10 @@ const userSchema = new Schema({
         type: String, // service
     },
 
+    coverImage: {
+        type: String, // service
+    },
+
     password: {
         type: String,
         required: [true, "Password is required"],
