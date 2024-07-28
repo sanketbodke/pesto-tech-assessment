@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useCookies } from "react-cookie";
 import axios from 'axios';
 import apiUrls from '../constant/apiUrl.js';
+import { logInStart, logInSuccess ,logInFailure } from "../redux/user/userSlice.js";
+import { useDispatch, useSelector } from "react-redux";
 
 const useForm = () => {
     const [formData, setFormData] = useState({});
@@ -10,6 +13,10 @@ const useForm = () => {
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
     const location = useLocation();
+    const dispatch = useDispatch();
+
+    const { loading, errors } = useSelector((state) => state.user);
+    const [_, setCookies] = useCookies(["access_token"]);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -31,9 +38,19 @@ const useForm = () => {
             const response = await axios.post(apiUrl, formData);
             setSuccess(true);
             console.log('Form submitted successfully:', response.data);
+
+            if (location.pathname === '/auth/login') {
+                dispatch(logInStart());
+                dispatch(logInSuccess(response));
+                setCookies("access_token", response.data.data.accessToken);
+            }
         } catch (exception) {
             setError(exception.response?.data?.message || 'Error submitting form');
             console.error('Error submitting form:', exception);
+
+            if (location.pathname === '/auth/login') {
+                dispatch(logInFailure());
+            }
         } finally {
             setIsLoading(false);
         }
@@ -50,6 +67,7 @@ const useForm = () => {
         isLoading,
         error,
         success,
+        errors,
     };
 };
 

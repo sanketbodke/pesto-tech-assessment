@@ -30,9 +30,11 @@ function Register() {
                 name="password"
                 onChange={handleInputChange}
             />
-            <p onClick={handleShowAndHidePassword}> show password  </p>
+            <p onClick={handleShowAndHidePassword}> {showPassword ? "Hide Password" : "Show Password"} </p>
 
             <button type="submit">SignUp</button>
+
+            <a href="/auth/login">Already have an account ? Login </a>
         </form>
     );
 }

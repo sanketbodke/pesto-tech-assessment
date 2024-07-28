@@ -1,10 +1,11 @@
 import React from 'react';
 import {Navigate, Outlet} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 function AuthLayout() {
-    const { currentUser } = false;
+    const { currentUser } = useSelector((state) => state.user);
 
-    const isAuthenticated = false;
+    const isAuthenticated = currentUser;
     return (
         <>
             {isAuthenticated ? (

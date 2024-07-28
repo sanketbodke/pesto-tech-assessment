@@ -23,9 +23,11 @@ function Login() {
                 name="password"
                 onChange={handleInputChange}
             />
-            <p onClick={handleShowAndHidePassword}> show password </p>
+            <p onClick={handleShowAndHidePassword}> {showPassword ? "Hide Password" : "Show Password"} </p>
 
             <button type="submit">Login</button>
+
+            <a href="/auth/register">Don't have an account ? Register </a>
         </form>
     );
 }
