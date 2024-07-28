@@ -22,7 +22,6 @@ const userSchema = new Schema({
 
     avatar: {
         type: String, // service
-        required: true,
     },
 
     password: {
