@@ -1,8 +1,11 @@
 import React from 'react';
+import {HomeContainer} from "./Home.styled.jsx";
 
-function Home(props) {
+function Home() {
     return (
-        <div>Home</div>
+        <HomeContainer>
+            Home Content
+        </HomeContainer>
     );
 }
 

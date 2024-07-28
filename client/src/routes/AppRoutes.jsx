@@ -5,6 +5,7 @@ import Login from "../pages/auth/form/login/login.jsx";
 import Register from "../pages/auth/form/register/register.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
 import Home from "../pages/Home/Home.jsx";
+import About from "../pages/About/About.jsx";
 
 function AppRoutes() {
     return (
@@ -16,6 +17,7 @@ function AppRoutes() {
 
             <Route Component={PrivateRoute}>
                 <Route index Component={Home}></Route>
+                <Route path="/about" Component={About}></Route>
             </Route>
         </Routes>
     );
