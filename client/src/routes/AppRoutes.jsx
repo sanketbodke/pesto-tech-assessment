@@ -1,23 +1,27 @@
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
-import authLayout from "../pages/auth/authLayout.jsx";
+import AuthLayout from "../pages/auth/authLayout.jsx";
 import Login from "../pages/auth/form/login/login.jsx";
 import Register from "../pages/auth/form/register/register.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
 import Home from "../pages/Home/Home.jsx";
 import About from "../pages/About/About.jsx";
+import UserProfile from "../pages/UserProfile/UserProfile.jsx";
 
 function AppRoutes() {
     return (
         <Routes>
-            <Route Component={authLayout}>
-                <Route path="auth/login" Component={Login}></Route>
-                <Route path="auth/register" Component={Register}></Route>
+            <Route path="auth" element={<AuthLayout />}>
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
             </Route>
 
-            <Route Component={PrivateRoute}>
-                <Route index Component={Home}></Route>
-                <Route path="/about" Component={About}></Route>
+            <Route element={<PrivateRoute />}>
+                <Route path="/" element={<Home />} />
+                <Route path="about" element={<About />} />
+                <Route path="user">
+                    <Route path="profile" element={<UserProfile />} />
+                </Route>
             </Route>
         </Routes>
     );

@@ -6,7 +6,8 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        background-color: rgb(247 247 247);;
+        background-color: rgb(247 247 247);
+        letter-spacing: 1px;
     }
 `
 
