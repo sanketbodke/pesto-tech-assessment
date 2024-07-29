@@ -1,7 +1,9 @@
-import {useSelector} from "react-redux";
+import currentUser from "../../../utils/currentUser.js";
 
 const usePersonalDetails = () => {
-    const user = useSelector((state) => state.user)
+    const {
+        user
+    } = currentUser()
 
     const userName = user.currentUser.data.data.user.username;
     const email = user.currentUser.data.data.user.email;

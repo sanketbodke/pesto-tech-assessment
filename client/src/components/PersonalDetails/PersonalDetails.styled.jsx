@@ -23,4 +23,5 @@ export const Input = styled.p`
     border-radius: 5px;
     margin-right: 15px;
     width: 150px;
+    overflow-x: scroll;
 `

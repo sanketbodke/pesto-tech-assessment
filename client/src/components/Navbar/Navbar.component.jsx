@@ -1,11 +1,15 @@
 import React from 'react';
 import { Nav, Title, UserName } from "./Navbar.styled.jsx"
+import useNavbar from "./useNavbar.js";
 
 function NavbarComponent() {
+    const {
+        userName
+    } = useNavbar()
     return (
         <Nav>
-            <Title>Todo's</Title>
-            <UserName>Sanket B</UserName>
+            <Title>JusCorpus</Title>
+            <UserName>{userName}</UserName>
         </Nav>
     );
 }
