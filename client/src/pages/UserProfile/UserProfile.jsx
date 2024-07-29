@@ -5,6 +5,7 @@ import {
     DetailsText,
     Line, ProfileAndCoverImage, CoverImage, ProfileImage
 } from "./UserProfile.styled.jsx";
+import PersonalDetails from "../../components/PersonalDetails/PersonalDetails.component.jsx";
 
 function UserProfile() {
     return (
@@ -19,6 +20,7 @@ function UserProfile() {
                 <CoverImage></CoverImage>
                 <ProfileImage></ProfileImage>
             </ProfileAndCoverImage>
+            <PersonalDetails />
         </UserProfileContainer>
     );
 }
