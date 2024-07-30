@@ -5,22 +5,6 @@ export const UserProfileContainer = styled.div`
     flex-direction: column;
 `;
 
-export const DetailsContainer = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 10px;
-`;
-
-export const DetailsText = styled.p`
-    font-size: 16px;
-    color: #aaaaaa;
-`;
-
-export const Line = styled.span`
-    border: 0.5px solid #aaaaaa;
-    width: 230px;
-`;
-
 export const ProfileAndCoverImage = styled.div`
     position: relative;
 `;

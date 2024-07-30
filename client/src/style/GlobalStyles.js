@@ -9,6 +9,10 @@ const GlobalStyles = createGlobalStyle`
         background-color: rgb(247 247 247);
         letter-spacing: 1px;
     }
+    
+    ::placeholder{
+        letter-spacing: 1px;
+    }
 `
 
 export default GlobalStyles
