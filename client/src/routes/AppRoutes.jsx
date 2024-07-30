@@ -8,6 +8,7 @@ import Home from "../pages/Home/Home.jsx";
 import About from "../pages/About/About.jsx";
 import UserProfile from "../pages/UserProfile/UserProfile.jsx";
 import CreateTask from "../pages/Task/create/create.jsx";
+import DisplayTask from "../pages/Task/Display/Display.jsx";
 
 function AppRoutes() {
     return (
@@ -26,6 +27,7 @@ function AppRoutes() {
 
                 <Route path="task">
                     <Route path="new" element={<CreateTask />} />
+                    <Route path="all" element={<DisplayTask />} />
                 </Route>
             </Route>
         </Routes>
