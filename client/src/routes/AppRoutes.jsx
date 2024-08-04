@@ -9,6 +9,7 @@ import About from "../pages/About/About.jsx";
 import UserProfile from "../pages/UserProfile/UserProfile.jsx";
 import CreateTask from "../pages/Task/create/create.jsx";
 import DisplayTask from "../pages/Task/Display/Display.jsx";
+import UpdateTask from "../pages/Task/update/Update.jsx";
 
 function AppRoutes() {
     return (
@@ -28,6 +29,7 @@ function AppRoutes() {
                 <Route path="task">
                     <Route path="new" element={<CreateTask />} />
                     <Route path="all" element={<DisplayTask />} />
+                    <Route path=":id/update" element={<UpdateTask/>}/>
                 </Route>
             </Route>
         </Routes>
