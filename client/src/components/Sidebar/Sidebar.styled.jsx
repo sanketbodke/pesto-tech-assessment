@@ -10,3 +10,19 @@ export const Sidebar = styled.aside`
     border-radius: 20px;
     box-shadow: 0 5px 4px rgb(146 161 176 / 15%);
 `;
+
+export const Tabs = styled.div`
+    width: 100%;
+`
+
+export const ActiveTab = styled.div`
+    background-color: #f9f9f9;
+    color: #000000;
+    padding: 15px 10px;
+`
+
+export const Tab =  styled.div`
+    padding: 0 10px;
+    background-color: #fff;
+    margin-bottom: 20px;
+`

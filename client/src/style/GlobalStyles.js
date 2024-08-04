@@ -10,6 +10,12 @@ const GlobalStyles = createGlobalStyle`
         letter-spacing: 1px;
     }
     
+    a{
+        text-decoration: none;
+        color: #000000;
+        font-size: 14px;
+    }
+    
     ::placeholder{
         letter-spacing: 1px;
     }
