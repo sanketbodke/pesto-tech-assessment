@@ -1,5 +1,5 @@
 import useCreateTask from "./useCreateTask.js";
-import {Form, Description, Input, Option, Select, TextArea, TitleAndStatus, Button} from "./create.styled.jsx";
+import {Form, Description, Input, Option, Select, TextArea, TitleAndStatus, Button} from "../task.styled.jsx";
 import Header from "../../../components/Header/Header.jsx";
 function CreateTask() {
     const {
