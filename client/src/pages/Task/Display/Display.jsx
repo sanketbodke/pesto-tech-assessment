@@ -1,5 +1,7 @@
+import React from 'react';
 import useDisplay from "./useDisplay.js";
-import { DisplayContainer } from "./Display.styled.jsx"
+import { DisplayContainer } from "./Display.styled.jsx";
+import Header from "../../../components/Header/Header.jsx";
 import Table from "../../../components/Table/Table.component.jsx";
 function Display() {
     const {
@@ -7,13 +9,17 @@ function Display() {
         error,
         isLoading,
         emptyTasks,
-        tableHeaders
-    } = useDisplay()
+        tableHeaders,
+        handleDeleteTask
+    } = useDisplay();
+
     return (
         <DisplayContainer>
+            <Header headerText="All Tasks" />
             <Table
                 tableHeaders={tableHeaders}
                 tableData={tasks}
+                handleDeleteTask={handleDeleteTask}
             />
         </DisplayContainer>
     );
