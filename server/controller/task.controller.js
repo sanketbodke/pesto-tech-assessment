@@ -2,11 +2,12 @@ import { asyncHandler } from "../utils/asyncHandler.js"
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { Task } from "../models/task.model.js"
+import {User} from "../models/user.model.js";
 
 const createTask = asyncHandler(async (req,resp) => {
     // get data from user
 
-    const { title, description, status } = req.body;
+    const { title, description, status, userOwner } = req.body;
 
     if(
         [title, description, status].some((field) => field.trim() === "")
@@ -19,7 +20,8 @@ const createTask = asyncHandler(async (req,resp) => {
     const task = await Task.create({
         title,
         description,
-        status
+        status,
+        userOwner
     })
 
     if(!task){
@@ -98,11 +100,29 @@ const deleteTaskById = asyncHandler(async (req,resp) => {
     )
 })
 
+const getUserTasks = asyncHandler(async (req,resp) => {
+    const userId = req.params.userId;
+
+    const user = await User.findById(userId)
+
+    if (!user) {
+        throw new ApiError(400, `User not found`)
+    }
+
+    const userTasks = await Task.find({userOwner: user._id})
+
+    return resp.status(200).json(
+        new ApiResponse(200, userTasks, "User Tasks")
+    )
+
+})
+
 
 export {
     createTask,
     getAllTasks,
     getTaskById,
     updateTaskById,
-    deleteTaskById
+    deleteTaskById,
+    getUserTasks
 }

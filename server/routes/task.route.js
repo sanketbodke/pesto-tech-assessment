@@ -1,5 +1,12 @@
 import {Router} from "express";
-import { createTask, getAllTasks, getTaskById, updateTaskById, deleteTaskById } from "../controller/task.controller.js"
+import {
+    createTask,
+    getAllTasks,
+    getTaskById,
+    updateTaskById,
+    deleteTaskById,
+    getUserTasks
+} from "../controller/task.controller.js"
 
 const router = Router()
 
@@ -8,5 +15,7 @@ router.route("/").get(getAllTasks)
 router.route("/:id").get(getTaskById)
 router.route("/:id").put(updateTaskById)
 router.route("/:id").delete(deleteTaskById)
+router.route("/:id").delete(deleteTaskById)
+router.route("/userTasks/:userId").get(getUserTasks)
 
 export default router
