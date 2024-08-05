@@ -7,6 +7,7 @@ const apiUrls = {
     getAllTasks: `${baseUrl}/api/v1/tasks`,
     getTaskById: `${baseUrl}/api/v1/tasks/:id`,
     getUpdateAndDeleteTaskById: `${baseUrl}/api/v1/tasks/:id`,
+    getUserTasks: `${baseUrl}/api/v1/tasks/userTasks/:userId`
 };
 
 export default apiUrls;

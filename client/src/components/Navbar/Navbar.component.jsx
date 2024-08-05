@@ -8,7 +8,7 @@ function NavbarComponent() {
     } = useNavbar()
     return (
         <Nav>
-            <Title>JusCorpus</Title>
+            <Title>Task Manager</Title>
             <UserName>{userName}</UserName>
         </Nav>
     );

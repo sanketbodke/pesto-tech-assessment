@@ -30,7 +30,7 @@ function Table({ tableHeaders, tableData, handleDeleteTask }) {
                         <TableCell>{task.status}</TableCell>
                         <TableCell>
                             <ActionFields>
-                                <Link to={`/task/${task._id}/update`}>Update</Link>
+                                <Link to={`/tasks/${task._id}/update`}>Update</Link>
                                 <DeleteTask onClick={() => handleDeleteTask(task._id)}>Delete</DeleteTask>
                             </ActionFields>
                         </TableCell>
