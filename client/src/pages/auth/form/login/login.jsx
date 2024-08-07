@@ -1,5 +1,6 @@
 import React from 'react';
 import useForm from "../../../../hooks/useForm.jsx";
+import {Button, Form, Input, Label} from "../Form.styled.js";
 
 function Login() {
     const {
@@ -9,26 +10,26 @@ function Login() {
         showPassword
     } = useForm()
     return (
-        <form onSubmit={handleFormSubmit}>
-            <label htmlFor="username">Username</label>
-            <input
+        <Form onSubmit={handleFormSubmit}>
+            <Label htmlFor="username">Username</Label>
+            <Input
                 type="text"
                 name="username"
                 onChange={handleInputChange}
             />
 
-            <label htmlFor="password">Password</label>
-            <input
+            <Label htmlFor="password">Password</Label>
+            <Input
                 type={showPassword ? "text" : "password"}
                 name="password"
                 onChange={handleInputChange}
             />
             <p onClick={handleShowAndHidePassword}> {showPassword ? "Hide Password" : "Show Password"} </p>
 
-            <button type="submit">Login</button>
+            <Button type="submit">Login</Button>
 
             <a href="/auth/register">Don't have an account ? Register </a>
-        </form>
+        </Form>
     );
 }
 
