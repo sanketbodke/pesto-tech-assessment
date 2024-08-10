@@ -9,7 +9,7 @@ export const DetailsContainer = styled.div`
 
 export const DetailsText = styled.p`
     font-size: 16px;
-    color: #aaaaaa;
+    color: #53a7f5;
 `;
 
 export const Line = styled.span`

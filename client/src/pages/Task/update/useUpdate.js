@@ -2,8 +2,11 @@ import {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import apiUrls from "../../../constant/apiUrl.js";
+import { message } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 function UseCreateTask() {
+    const navigate = useNavigate();
     const [task, setTask] = useState({})
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -40,9 +43,13 @@ function UseCreateTask() {
                 task
             )
             setSuccess(true);
+            message.success('Task updated successfully');
+            navigate(`/tasks`);
             console.log('Task updated successfully:', response.data);
         }catch (exception){
-            setError(exception.response?.data?.message || 'Error updating task');
+            const errorMsg = exception.response?.data?.message || 'Error adding task';
+            setError(errorMsg);
+            message.error(errorMsg);
             console.error('Error updating form:', exception);
         }  finally {
             setIsLoading(false);

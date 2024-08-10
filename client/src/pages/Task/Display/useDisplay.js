@@ -2,6 +2,7 @@ import axios from "axios";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import apiUrls from "../../../constant/apiUrl.js";
 import currentUser from "../../../../utils/currentUser.js";
+import { message } from 'antd';
 
 function UseDisplay() {
     const {
@@ -28,6 +29,7 @@ function UseDisplay() {
     const handleDeleteTask = async (taskId) => {
         try {
             await axios.delete(`${getDeleteTaskApi(taskId)}`);
+            message.warning("Task deleted ");
             console.log('Task deleted successfully');
             queryClient.invalidateQueries(["task"]);
         } catch (exception) {

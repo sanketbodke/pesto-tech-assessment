@@ -6,6 +6,7 @@ import {
     TableRow,
     TableHeader,
     TableCell,
+    StatusText,
     ActionFields,
     DeleteTask
 } from "./Table.styled.jsx";
@@ -27,7 +28,9 @@ function Table({ tableHeaders, tableData, handleDeleteTask }) {
                     <TableRow key={key}>
                         <TableCell>{task.title}</TableCell>
                         <TableCell>{task.description}</TableCell>
-                        <TableCell>{task.status}</TableCell>
+                        <TableCell>
+                            <StatusText status={task.status}>{task.status}</StatusText>
+                        </TableCell>
                         <TableCell>
                             <ActionFields>
                                 <Link to={`/tasks/${task._id}/update`}>Update</Link>

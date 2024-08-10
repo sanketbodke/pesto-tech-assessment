@@ -32,6 +32,7 @@ export const TableHeader = styled.th`
     position: sticky;
     top: 0;
     background-color: #ffffff;
+    color: #53a7f5;
     z-index: 2;
 `;
 
@@ -40,14 +41,33 @@ export const TableCell = styled.td`
     border: 1px solid #dddddd;
 `;
 
+export const StatusText = styled.p`
+    display: inline;
+    background-color: ${({ status }) => {
+    switch (status) {
+        case 'Done':
+            return '#93f1a8';
+        case 'InProgress':
+            return '#fae399';
+        case 'Todo':
+            return '#fa9ea5';
+        default:
+            return '#ffffff';
+    }
+}};
+    padding: 4px; 
+    border-radius: 4px;
+    font-size: 14px;
+`;
+
 export const ActionFields = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
     width: 40px;
-`
+`;
 
 export const DeleteTask = styled.p`
     font-size: 14px;
     cursor: pointer;
-`
+`;

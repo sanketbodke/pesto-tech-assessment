@@ -23,6 +23,10 @@ export const Input = styled.input`
     outline: none;
     border: 1px solid #aaaaaa;
     border-radius: 5px;
+
+    &:focus {
+        border-color: #53a7f5;
+    }
 `
 
 export const Select = styled.select`
@@ -31,6 +35,10 @@ export const Select = styled.select`
     outline: none;
     border: 1px solid #aaaaaa;
     border-radius: 5px;
+
+    &:focus {
+        border-color: #53a7f5;
+    }
 `
 
 export const TextArea = styled.textarea`
@@ -41,6 +49,10 @@ export const TextArea = styled.textarea`
     outline: none;
     border: 1px solid #aaaaaa;
     border-radius: 5px;
+
+    &:focus {
+        border-color: #53a7f5;
+    }
 `
 
 export const Option = styled.option`
@@ -54,7 +66,7 @@ export const Button = styled.button`
     padding: 10px;
     cursor: pointer;
     color: #ffffff;
-    background-color: #262626;
+    background-color: #53a7f5;
     border-radius: 5px;
     outline: none;
     border: none;

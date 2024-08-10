@@ -17,7 +17,7 @@ export const Tabs = styled.div`
 
 export const ActiveTab = styled.div`
     background-color: #f9f9f9;
-    color: #000000;
+    color: #53a7f5;
     padding: 15px 10px;
 `
 

@@ -19,7 +19,7 @@ export const Forms = styled.div`
     border-radius: 20px;
 `
 
-export const Form = styled.div`
+export const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: 15px;

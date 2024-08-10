@@ -22,6 +22,6 @@ export const Input = styled.p`
     padding: 12px 20px;
     border-radius: 5px;
     margin-right: 15px;
-    width: 150px;
+    width: 200px;
     overflow-x: scroll;
 `
