@@ -1,6 +1,7 @@
 import React from 'react';
 import useForm from "../../../../hooks/useForm.jsx";
-import {Button, Form, Input, Label} from "../Form.styled.js";
+import {Button, Form, FormHeading, Input, Label} from "../Form.styled.js";
+import {Link} from "react-router-dom";
 
 function Login() {
     const {
@@ -11,6 +12,7 @@ function Login() {
     } = useForm()
     return (
         <Form onSubmit={handleFormSubmit}>
+            <FormHeading>Login</FormHeading>
             <Label htmlFor="username">Username</Label>
             <Input
                 type="text"
@@ -28,7 +30,7 @@ function Login() {
 
             <Button type="submit">Login</Button>
 
-            <a href="/auth/register">Don't have an account ? Register </a>
+            <Link to="/auth/register">Don't have an account ? Register </Link>
         </Form>
     );
 }

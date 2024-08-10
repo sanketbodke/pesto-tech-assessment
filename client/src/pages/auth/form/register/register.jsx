@@ -1,5 +1,7 @@
 import useForm from "../../../../hooks/useForm.jsx";
-import {Form, Label, Input, Button} from "../Form.styled.js";
+import {Form, Label, Input, Button, FormHeading} from "../Form.styled.js";
+import React from "react";
+import {Link} from "react-router-dom";
 function Register() {
 
     const {
@@ -11,6 +13,7 @@ function Register() {
 
     return (
         <Form onSubmit={handleFormSubmit}>
+            <FormHeading>Register</FormHeading>
             <Label htmlFor="username">Username</Label>
             <Input
                 type="text"
@@ -35,7 +38,7 @@ function Register() {
 
             <Button type="submit">SignUp</Button>
 
-            <a href="/auth/login">Already have an account ? Login </a>
+            <Link to="/auth/login">Already have an account ? Login </Link>
         </Form>
     );
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import {Navigate, Outlet} from "react-router-dom";
 import {useSelector} from "react-redux";
-import {Forms, LayoutContainer} from "./form/Form.styled.js";
+import {Forms, LayoutContainer, LayoutImage} from "./form/Form.styled.js";
+import {images} from "../../constant/index.js"
 
 function AuthLayout() {
     const { currentUser } = useSelector((state) => state.user);
@@ -15,7 +16,10 @@ function AuthLayout() {
                 <LayoutContainer>
                      <Forms>
                          <Outlet />
-                         <h1>Img.....</h1>
+                         <LayoutImage
+                            src={images.LayoutImg}
+                            alt="Layout image"
+                         />
                      </Forms>
                 </LayoutContainer>
             )}
