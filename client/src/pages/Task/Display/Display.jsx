@@ -1,8 +1,10 @@
 import React from 'react';
 import useDisplay from "./useDisplay.js";
-import { DisplayContainer } from "./Display.styled.jsx";
+import {Button, DisplayContainer, SearchContainer, SearchInput} from "./Display.styled.jsx";
 import Header from "../../../components/Header/Header.jsx";
 import Table from "../../../components/Table/Table.component.jsx";
+import {Link} from "react-router-dom";
+
 function Display() {
     const {
         tasks,
@@ -10,12 +12,23 @@ function Display() {
         isLoading,
         emptyTasks,
         tableHeaders,
-        handleDeleteTask
+        handleDeleteTask,
+        searchTerm,
+        handleSearchChange
     } = useDisplay();
 
     return (
         <DisplayContainer>
             <Header headerText="All Tasks" />
+            <SearchContainer>
+                <SearchInput
+                    type="text"
+                    placeholder="Search Task"
+                    value={searchTerm}
+                    onChange={handleSearchChange}
+                />
+                <Link to="new"><Button>Add New</Button></Link>
+            </SearchContainer>
             <Table
                 tableHeaders={tableHeaders}
                 tableData={tasks}

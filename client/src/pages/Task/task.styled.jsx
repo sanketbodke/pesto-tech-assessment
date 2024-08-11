@@ -4,6 +4,7 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: 25px;
+    margin-top: 25px;
 `
 
 export const TitleAndStatus = styled.div`
