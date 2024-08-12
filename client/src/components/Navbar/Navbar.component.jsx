@@ -1,6 +1,8 @@
 import React from 'react';
 import { Nav, Title, UserName } from "./Navbar.styled.jsx"
 import useNavbar from "./useNavbar.js";
+import { UserOutlined } from '@ant-design/icons';
+import {Link} from "react-router-dom";
 
 function NavbarComponent() {
     const {
@@ -9,7 +11,10 @@ function NavbarComponent() {
     return (
         <Nav>
             <Title>Task Manager</Title>
-            <UserName>{userName}</UserName>
+            <Link to={"/user/profile"}>
+                <UserName>{userName} <UserOutlined />
+                </UserName>
+            </Link>
         </Nav>
     );
 }
